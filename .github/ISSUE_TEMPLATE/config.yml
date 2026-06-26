@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Questions & discussion
+    url: https://github.com/shubhamhingne/.github/discussions
+    about: Ask usage questions and discuss ideas here instead of opening an issue.
+  - name: 🔒 Report a security vulnerability
+    url: https://github.com/shubhamhingne/.github/security/policy
+    about: Please report vulnerabilities privately — never in a public issue.

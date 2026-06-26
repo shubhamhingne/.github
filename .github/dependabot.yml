@@ -1,0 +1,56 @@
+# Canonical Dependabot config. Dependabot is NOT inherited from the .github repo —
+# copy this file into each repository's .github/ and keep only the ecosystems it uses.
+version: 2
+updates:
+  # GitHub Actions — every repo with workflows
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: "chore(deps)"
+    groups:
+      actions:
+        patterns: ["*"]
+
+  # JavaScript / TypeScript — React, Next.js, Node, React Native
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: "chore(deps)"
+    groups:
+      production:
+        dependency-type: production
+      development:
+        dependency-type: development
+
+  # Python — FastAPI, Flask, AI/LLM services
+  - package-ecosystem: pip
+    directory: "/"
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: "chore(deps)"
+
+  # Android (Gradle) — uncomment in Android repos
+  # - package-ecosystem: gradle
+  #   directory: "/"
+  #   schedule:
+  #     interval: weekly
+  #   commit-message:
+  #     prefix: "chore(deps)"
+
+  # Flutter / Dart (pub) — uncomment in Flutter repos
+  # - package-ecosystem: pub
+  #   directory: "/"
+  #   schedule:
+  #     interval: weekly
+
+  # Containers — uncomment where a Dockerfile exists
+  # - package-ecosystem: docker
+  #   directory: "/"
+  #   schedule:
+  #     interval: weekly
